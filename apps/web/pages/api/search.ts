@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs'
 import path from 'path'
-import { InMemorySearch } from '../../../services/search/index'
+import { InMemorySearch } from '../../../../services/search/index'
 
 const search = new InMemorySearch()
 function ensureIndex() {
   if ((search as any)._ready) return
-  const root = process.cwd()
-  const seededDir = path.join(root, 'data', 'seeded')
+  const monorepoRoot = path.resolve(process.cwd(), '..', '..')
+  const seededDir = path.join(monorepoRoot, 'data', 'seeded')
   const populations = JSON.parse(fs.readFileSync(path.join(seededDir, 'populations.json'), 'utf8') || '[]')
   const supplies = JSON.parse(fs.readFileSync(path.join(seededDir, 'supplies.json'), 'utf8') || '[]')
   const docs = [
