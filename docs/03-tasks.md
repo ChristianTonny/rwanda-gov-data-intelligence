@@ -15,8 +15,8 @@ Scope: deliver a demo-ready MVP in 2–3 weeks with fast search, NL answers with
 8. Implement Gemini adapter with provider switcher and strict prompt ✅ (mock/fallback ready)
 9. Implement `/api/query` to return `{answer, provenance[], tokens, cost}` ✅
 10. Add onboarding (4 questions) to set role/region defaults ⏱️
-11. Wire dashboards to seeded data (KPI, chart, alerts) ✅
-12. Add provenance panel and link-through to raw rows ✅
+11. Wire dashboards to seeded data (KPI, chart, alerts) ⏱️ UI shells render; binding pending
+12. Add provenance panel and link-through to raw rows ⏱️ Answer card pending visibility
 13. Add task creation from recommendation card ⏱️
 
 ## Phase 3 — Demo polish (Week 3)
@@ -37,6 +37,12 @@ Scope: deliver a demo-ready MVP in 2–3 weeks with fast search, NL answers with
 ## Deliverables per phase
 - Phase 1: running app with ingest/search/dashboards; seeded data
 - Phase 2: NL answers with provenance; role switching UI; search dropdown; charts
+  - Current status (UI):
+    - Dashboard: KPI/Chart/Alerts boxes + Key Trends visible; no live series yet
+    - Role selector visible; switching does not yet update widgets
+    - Entrepreneur: feature-flag notice displays
+    - Recent: empty recent activity card shows
+    - Settings: role and region inputs functional (persist role); no backend persist
 - Phase 3: entrepreneur view; export; demo assets
 
 ---

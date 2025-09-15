@@ -14,7 +14,7 @@ export function RoleSelector({ className }: { className?: string }) {
       <label className="sr-only" htmlFor="role-select">Role</label>
       <select
         id="role-select"
-        className="h-9 rounded-md border border-gray-200 bg-white px-3 text-sm"
+        className="h-9 rounded-md border border-gray-200 bg-white px-3 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand transition-colors duration-200"
         value={role}
         onChange={handleChange}
         aria-label="Select role"

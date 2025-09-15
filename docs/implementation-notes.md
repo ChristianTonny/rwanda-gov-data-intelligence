@@ -28,13 +28,13 @@
 ## Phase 2 Progress (September 15, 2025)
 
 ### Implemented
-- Role switching in header backed by `/api/dashboards?role=...` with real KPI/alerts/chart data
-- Search dropdown (debounced) powered by `/api/search` with dataset badges
-- Enter to submit NL query to `/api/query`; “AI Answer” full-width with provenance
-- Recharts bar chart rendering top district populations from seeded data
+- Role selector in header; state persisted via `RoleProvider` (UI shows role)
+- Tabs: Dashboard, Entrepreneur (flag-gated), Recent, Settings
+- Dashboard shells: KPI/Chart/Alerts + Key Trends (visible)
+- Export buttons (PDF/CSV) with placeholder actions
 - Monorepo import fixes and `externalDir` enabled in Next config
 
 ### Notes
-- Provenance timestamps derived from `source_year` in seeded data
-- Dashboard chart response standardized to `{ name, value }` series
-- Contextual role state via `RoleProvider` to simplify prop drilling
+- Back-end endpoints are in place and tested independently
+- Binding UI to live series and answer/provenance is pending
+- Consider feature flags for WIP tabs to avoid UX confusion
