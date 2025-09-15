@@ -1,0 +1,40 @@
+# Tasks — Phased Breakdown
+
+Scope: deliver a demo-ready MVP in 2–3 weeks with fast search, NL answers with provenance, and role dashboards using two small datasets.
+
+## Phase 1 — Foundation (Week 1)
+1. Initialize repo structure and Next.js app (app router, TS, Tailwind, shadcn/ui)
+2. Add API routes: `health`, `ingest`, `search`, `query`, `dashboards`, `tasks` (stubs)
+3. Implement Excel→CSV extraction and CSV→JSON seed scripts
+4. Define ontology and seed minimal datasets (districts, facilities, supplies, projects)
+5. Build in-memory search index; return simple metrics in <1s
+6. Create Analyst and Citizen dashboard skeletons (3 widgets each)
+7. Write smoke tests: ETL mapping, search correctness, API health
+
+## Phase 2 — Intelligence (Week 2)
+8. Implement Gemini adapter with provider switcher and strict prompt
+9. Implement `/api/query` to return `{answer, provenance[], tokens, cost}`
+10. Add onboarding (4 questions) to set role/region defaults
+11. Wire dashboards to seeded data (KPI, chart, alerts)
+12. Add provenance panel and link-through to raw rows
+13. Add task creation from recommendation card
+
+## Phase 3 — Demo polish (Week 3)
+14. Entrepreneur view: rank top 5 underserved areas (table/map stub)
+15. Export stub (PDF/CSV) including sources
+16. Performance hardening: ensure search<1s, NL<10s, dashboard<3s
+17. Acceptance runbook and demo script finalization
+
+## Stretch (post-MVP)
+18. Meilisearch wrapper; Postgres migration; TRPC; Clerk auth; CI/CD
+
+## Testing checklist
+- ETL unit tests (column mapping → ontology)
+- Search smoke tests (keyword → metric)
+- Query schema test (answer/provenance keys)
+- Dashboard load time check under throttle
+
+## Deliverables per phase
+- Phase 1: running app with ingest/search/dashboards; seeded data
+- Phase 2: NL answers with provenance; onboarding; tasks
+- Phase 3: entrepreneur view; export; demo assets

@@ -1,0 +1,34 @@
+{
+  "name": "rwanda-gov-data-intelligence",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+    "start:web": "pnpm --filter web start",
+    "etl:excel": "ts-node services/etl/excel_to_csv.ts",
+    "seed": "ts-node services/etl/seed.ts",
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.5",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "node-fetch": "2",
+    "xlsx": "^0.18.5"
+  }
+}
