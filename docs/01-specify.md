@@ -25,6 +25,8 @@ Critical data is scattered across censuses, surveys, and administrative systems.
 5) Onboarding: 4-question flow to personalize defaults
 6) Tasks: Create a follow-up task from an alert/recommendation
 
+Status (today): UI shells and routing in place (Dashboard/Recent/Settings); data binding and Answer view pending.
+
 ## Example queries
 - Entrepreneur: “Top 5 areas in Gasabo with high population but low pharmacy coverage”
 - Official: “Which districts need more teachers based on enrollment trends?”

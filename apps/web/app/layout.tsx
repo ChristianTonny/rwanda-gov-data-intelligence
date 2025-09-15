@@ -1,9 +1,13 @@
 import React from 'react'
+import './globals.css'
+import { Providers } from './providers'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased selection:bg-brand/10 selection:text-gray-900" suppressHydrationWarning>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

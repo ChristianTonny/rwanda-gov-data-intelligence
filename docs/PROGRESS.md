@@ -1,6 +1,6 @@
 # Project Progress — Rwanda Government Data Intelligence (RGDI)
 
-Last updated: 2025-09-15
+Last updated: 2025-09-15 (evening)
 
 ## What we’re building
 A unified platform where anyone can ask questions about Rwanda and get fast, trusted answers with visuals and source links. MVP focuses on two personas (Analyst, Citizen) and demonstrates an entrepreneur site‑selection scenario for Gasabo. Performance targets: search <1s, NL answer <10s, dashboard <3s.
@@ -47,16 +47,19 @@ See also: `docs/01-specify.md`, `docs/02-plan.md`, `docs/03-tasks.md`, `docs/REA
   - Rewrote normal docs: specification, plan, tasks, overview (README)
   - This progress log
 
+## Current UI status snapshot
+- Dashboard: KPI/Chart/Alerts placeholders + Key Trends visible; export buttons present
+- Role selector: toggles role in header; widgets not yet updating
+- Entrepreneur: page behind feature flag notice
+- Recent: empty recent activity card
+- Settings: role + region inputs; role persists locally
+
 ## What remains (near term)
-- UI scaffold:
-  - Add Tailwind + shadcn/ui
-  - Build role dashboards (Analyst, Citizen): 3 widgets each wired to seeded data
-  - Entrepreneur view: show top 5 underserved areas (table/map stub) with provenance
-- Onboarding flow (4 questions) and persisted defaults
-- Tests:
-  - ETL mapping unit tests; search smoke; NL response schema
-- Optional infra:
-  - Provider budget cap, timeout messaging; Meili wrapper; Postgres migrations and seed
+- Bind dashboard widgets to `/api/dashboards` (role/region aware)
+- Render Recharts chart from dashboards series
+- Search dropdown + AI Answer card with provenance
+- Onboarding (4 steps) and preference persistence
+- Tests: ETL mapping; search smoke; NL response schema
 
 ## How to run locally
 1. Install: `pnpm install`
