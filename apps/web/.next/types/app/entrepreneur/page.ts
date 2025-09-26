@@ -1,4 +1,4 @@
-// File: C:\Users\ChristianTonny\info\apps\web\app\entrepreneur\page.tsx
+// File: C:\Users\ChristianTonny\Downloads\rwanda-gov-data-intelligence\apps\web\app\entrepreneur\page.tsx
 import * as entry from '../../../../app/entrepreneur/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

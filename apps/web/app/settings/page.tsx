@@ -2,22 +2,20 @@
 
 import React from 'react'
 import { Header } from '../components/layout/Header'
-import { Sidebar } from '../components/layout/Sidebar'
 import { MainContent } from '../components/layout/MainContent'
 import { DashboardCard } from '../components/dashboard/DashboardCard'
 import { RoleSelector } from '../components/layout/RoleSelector'
+import { FloatingAIAssistant } from '../components/ui/FloatingAIAssistant'
 import { useRoleContext } from '../context/RoleContext'
 
 export default function SettingsPage() {
   const { role } = useRoleContext()
   const [region, setRegion] = React.useState('gasabo')
-  const [q, setQ] = React.useState('')
 
   return (
     <main className="min-h-screen">
-      <Header searchValue={q} onSearchChange={setQ} />
-      <div className="flex">
-        <Sidebar />
+      <Header />
+      <div>
         <MainContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <DashboardCard title="Role">
@@ -31,6 +29,7 @@ export default function SettingsPage() {
           </div>
         </MainContent>
       </div>
+      <FloatingAIAssistant />
     </main>
   )
 }

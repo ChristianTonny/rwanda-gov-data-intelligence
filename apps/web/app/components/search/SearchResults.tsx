@@ -22,16 +22,9 @@ export function SearchResults({ results, loading, provenance, error }: { results
     <div className="space-y-4">
       <div className="bg-white p-6 rounded-lg border transition-shadow duration-200 hover:shadow-md">
         {error ? <div className="text-sm text-red-600 mb-2">{error}</div> : null}
-        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start justify-between gap-4">
           <h3 className="text-lg font-semibold flex-1 text-gray-900">{results.answer}</h3>
-          <div className="flex items-center gap-2">
-            <button type="button" onClick={() => show({ title: 'Coming soon', description: 'Export to PDF is coming soon.' })} className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
-              <Download className="h-3.5 w-3.5" /> PDF
-            </button>
-            <button type="button" onClick={() => show({ title: 'Coming soon', description: 'Export to CSV is coming soon.' })} className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
-              <Download className="h-3.5 w-3.5" /> CSV
-            </button>
-          </div>
+          <div className="flex items-center gap-2" />
         </div>
         {provenance ? <ProvenancePanel sources={provenance} /> : null}
       </div>

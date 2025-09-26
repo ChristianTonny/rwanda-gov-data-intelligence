@@ -50,7 +50,11 @@ router.post("/", upload.single("file"), async (req, res) => {
     }
 
     const jsonData = await csvToJson(csvPath);
-    const mapped = mapOntology(jsonData);
+    const mapped = mapOntology(jsonData).map((row) => ({
+      ...row,
+      dataset: path.basename(csvPath).includes('population') ? 'nirs_population' : 'uploaded_csv',
+      timestamp: new Date().toISOString()
+    }));
 
     // index the docs
     await addDocs(mapped);

@@ -12,6 +12,7 @@ export function ProvenancePanel({ sources }: { sources: ProvenanceItem[] }) {
             <span>
               <span className="font-medium">{s.dataset}</span>
               {s.timestamp ? <span className="text-gray-400"> · {s.timestamp}</span> : null}
+              {s.recordId ? <span className="text-gray-400"> · {s.recordId}</span> : null}
               {s.link ? (
                 <a href={s.link} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline ml-2">
                   View

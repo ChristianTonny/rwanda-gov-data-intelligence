@@ -14,8 +14,8 @@ import FlexSearch from "flexsearch";
 const index = new FlexSearch.Document({
   document: {
     id: "_docId",
-    index: ["name", "population", "quantity", "gdp", "year"],
-    store: ["name", "population", "quantity", "gdp", "year", "_docId", "__raw"]
+    index: ["name", "population", "quantity", "gdp", "year", "dataset", "timestamp"],
+    store: ["name", "population", "quantity", "gdp", "year", "dataset", "timestamp", "_docId", "__raw"]
   },
   tokenize: "forward"
 });
@@ -81,4 +81,8 @@ export function stats() {
   return {
     docs_count: RAW.size
   };
+}
+
+export function getRawById(id) {
+  return RAW.get(id) || null;
 }
