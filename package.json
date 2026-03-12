@@ -30,5 +30,13 @@
   "dependencies": {
     "node-fetch": "2",
     "xlsx": "^0.18.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
